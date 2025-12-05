@@ -44,7 +44,7 @@ Check out websites using the Mobile App Template:
 2. Edit `_config.yml`, feel free to commut/uncomment what you need (google analtytics, or github for example)
 3. Edit `_data/app.yml` with your app data
 4. Update the text from `_data/strings.yml`, you can customize there the footer's links
-5. Edit icons and screenshots inside the `_images` folder and `icon.png` in the root
+5. Edit icons and screenshots inside the `_images` folder and `icon.webp` in the root
 6. Edit `_src/index.js` to update the product hunt modal (or to remove it) and to remove the darkmode plugin if you don't want it
 7. Deploy (on netlify, gitpages or surge, they are all free)
 
