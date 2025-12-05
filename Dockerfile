@@ -1,7 +1,5 @@
-# ----------------------------
-# Stage 1: Build assets (Node + Ruby + Jekyll)
-# ----------------------------
-FROM ruby:2.6 AS builder
+# Build assets (Node + Ruby + Jekyll)
+FROM ruby:2.6
 
 # Install Node.js 20 LTS (compatible with your Webpack setup)
 RUN apt-get update && apt-get install -y curl gnupg \
@@ -25,20 +23,8 @@ RUN npm install
 COPY . .
 
 # Build static files (Webpack + Jekyll)
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run build
 
-# ----------------------------
-# Stage 2: Serve using NGINX
-# ----------------------------
-FROM nginx:stable-alpine
-
-# Remove default nginx site
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy built site from builder
-COPY --from=builder /app/_site /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# Built files are in /app/_site
+# Use docker cp to extract them after build
