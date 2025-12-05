@@ -5,7 +5,7 @@
 
 title: Info KRL
 email: contact@achmad.dev
-description: Free to use static landing page template to showcase your mobile app
+# description:
 baseurl: "/infokrl" # the subpath of your site, e.g. /blog
 url: "https://achmad.dev" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#efeeff'
