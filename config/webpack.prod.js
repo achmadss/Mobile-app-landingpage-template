@@ -6,12 +6,25 @@ const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const TerserPlugin = require("terser-webpack-plugin");
+const fs = require('fs');
+
+// Read baseurl from _config.yml
+let baseurl = '';
+try {
+  const configContent = fs.readFileSync(path.resolve(__dirname, '../_config.yml'), 'utf8');
+  const baseurlMatch = configContent.match(/baseurl:\s*["']?([^"'\s]+)["']?/);
+  if (baseurlMatch) {
+    baseurl = baseurlMatch[1];
+  }
+} catch (e) {
+  console.warn('Could not read baseurl from _config.yml, using default');
+}
 
 module.exports = Merge(CommonConfig, {
   output: {
     filename: '[name]-[hash].bundle.js',
     path: path.resolve('assets'),
-    publicPath: '/assets/',
+    publicPath: `${baseurl}/assets/`,
   },
   optimization: {
     minimize: true,

@@ -4,12 +4,25 @@ const CommonConfig = require('./webpack.common.js');
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const webpack = require('webpack');
+const fs = require('fs');
+
+// Read baseurl from _config.yml
+let baseurl = '';
+try {
+  const configContent = fs.readFileSync(path.resolve(__dirname, '../_config.yml'), 'utf8');
+  const baseurlMatch = configContent.match(/baseurl:\s*["']?([^"'\s]+)["']?/);
+  if (baseurlMatch) {
+    baseurl = baseurlMatch[1];
+  }
+} catch (e) {
+  console.warn('Could not read baseurl from _config.yml, using default');
+}
 
 module.exports = Merge(CommonConfig, {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve('assets'),
-    publicPath: '/assets/',
+    publicPath: `${baseurl}/assets/`,
   },
   devtool: 'inline-source-map',
   plugins: [

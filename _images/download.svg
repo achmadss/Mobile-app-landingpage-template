@@ -1,31 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 650 215" width="650" height="200" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 215" width="500" height="200" role="img">
   <!-- Background -->
-  <rect x="5" y="5" width="650" height="200" rx="25" ry="25"
+  <rect x="5" y="5" width="540" height="200" rx="25" ry="25"
         fill="#000" stroke="#bfbfbf" stroke-width="5"/>
 
-  <!-- Download Icon -->
-  <g transform="translate(70,48)">
-    <!-- Arrow shaft (thicker) -->
-    <line x1="40" y1="0" x2="40" y2="45"
-          stroke="#fff" stroke-width="16" stroke-linecap="round" />
-
-    <!-- Arrow head (thicker/wider) -->
-    <path d="M15 45 L40 72 L65 45 Z"
-          fill="#fff" />
-
-    <!-- Tray (same as previous upward position) -->
-    <path d="M10 80 L70 80
-             C80 80 88 88 88 98
-             C88 108 80 116 70 116
-             L10 116
-             C0 116 -8 108 -8 98
-             C-8 88 0 80 10 80 Z"
-          fill="none" stroke="#fff" stroke-width="12"
-          stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-
   <!-- Text -->
-  <text x="200" y="130" fill="#fff"
+  <text x="75" y="130" fill="#fff"
         font-family="system-ui, sans-serif"
         font-size="70" font-weight="700">
     DOWNLOAD

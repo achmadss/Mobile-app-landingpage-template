@@ -6,13 +6,13 @@
 title: Info KRL
 email: contact@achmad.dev
 description: Free to use static landing page template to showcase your mobile app
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://infokrl.achmad.dev" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/infokrl" # the subpath of your site, e.g. /blog
+url: "https://achmad.dev" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#efeeff'
 twitter_username: AchmadSetyabudi
 github_username:  achmadss
 author: Achmad Setyabudi Susilo
-logo: assets/images/appicon.png
+logo: assets/images/appicon.svg
 twitter:
   username: AchmadSetyabudi
 social:
@@ -64,3 +64,6 @@ exclude:
   - optimization-fix-this-file-is-ignored.js
   - icon.png
   - docs
+  - docker-compose.yml
+  - Dockerfile
+  - build.sh
