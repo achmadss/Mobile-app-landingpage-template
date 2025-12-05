@@ -12,7 +12,7 @@ theme_color: '#efeeff'
 twitter_username: AchmadSetyabudi
 github_username:  achmadss
 author: Achmad Setyabudi Susilo
-logo: assets/images/appicon.webp
+logo: assets/images/appicon.png
 twitter:
   username: AchmadSetyabudi
 social:
@@ -62,5 +62,5 @@ exclude:
   - config
   - optimization-fix
   - optimization-fix-this-file-is-ignored.js
-  - icon.webp
+  - icon.png
   - docs

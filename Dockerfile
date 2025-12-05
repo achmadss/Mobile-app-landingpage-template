@@ -1,13 +1,12 @@
 # ----------------------------
 # Stage 1: Build assets (Node + Ruby + Jekyll)
 # ----------------------------
-FROM ruby:2.6 as builder
+FROM ruby:2.6 AS builder
 
-# Install Node.js 18 (compatible with your Webpack setup)
+# Install Node.js 20 LTS (compatible with your Webpack setup)
 RUN apt-get update && apt-get install -y curl gnupg \
- && curl -fsSL https://deb.nodesource.com/setup_current.x | bash - \
- && apt-get install -y nodejs \
- && npm install -g npm@latest
+ && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+ && apt-get install -y nodejs
 
 # Create project directory
 WORKDIR /app
